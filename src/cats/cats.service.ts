@@ -1,4 +1,3 @@
-
 import { Injectable } from '@nestjs/common';
 import { Cat } from './interfaces/cat.interface';
 
@@ -6,8 +5,9 @@ import { Cat } from './interfaces/cat.interface';
 export class CatsService {
   private readonly cats: Cat[] = [];
 
-  create(cat: Cat) {
+  create(cat: Cat): string {
     this.cats.push(cat);
+    return 'This action adds a new cat';
   }
 
   findAll(): Cat[] {
